@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import Main from './components/Main'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        A Haiku of Babel
+      </h1>
+
+      <Main />
+
+      <footer>
+        Inspired by <a href="https://en.wikipedia.org/wiki/The_Library_of_Babel">The Library of Babel</a> by Jorge Luis Borges and <a href="https://libraryofbabel.info/">libraryofbabel.info</a>
+      </footer>
     </div>
   );
 }
