@@ -1,0 +1,29 @@
+# Default values for mean-k8s.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 2
+image:
+  repository: mgimenez/haiku
+  tag: latest
+  pullPolicy: IfNotPresent
+service:
+  name: mean-k8s
+  type: LoadBalancer
+  externalPort: 80
+  internalPort: 8080
+externalService:
+  name: mean-k8s
+  type: LoadBalancer
+  externalPort: 443
+  internalPort: 8080
+  certificateID: '2a0e0c05-994a-4606-a9ce-6d6f6aa107be'
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  requests:
+    cpu: 250m
+    memory: 512Mi
+env_vars:
+  BASE_API_URL: 'https://haiku-api.lrner.io/api/1'
+  JWT_SECRET: 'iMf82QQpstR4w7Tad9cayHpaM7eYwKCtkKgvHkz7qXMCN2y4cpEFEdwd2wKbWEkm'

@@ -11,7 +11,7 @@ docker:
   image: mgimenez/character-sheet
 
 pre_build:
-  command: scripts/build.sh
+  command: ./build.sh
 
 build:
   method: docker
@@ -36,4 +36,3 @@ kubernetes:
 
 children:
   - client/
-
