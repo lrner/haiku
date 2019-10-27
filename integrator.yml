@@ -1,0 +1,39 @@
+app: 'character-sheet'
+
+language: javascript
+
+depenencies:
+  - mongodb
+
+docker:
+  registry: docker.io
+  container_port: 3000
+  image: mgimenez/character-sheet
+
+pre_build:
+  command: scripts/build.sh
+
+build:
+  method: docker
+
+deploy:
+  provider: helm
+  on: production
+
+test:
+  command: 'CI=true JWT_SECRET=test npm run-script test_once'
+  env:
+    CI: true
+    JWT_SECRET: 'test'
+  deps:
+    - mongodb
+
+helm:
+  directory: helm-chart
+
+kubernetes:
+  replicas: 2
+
+children:
+  - client/
+

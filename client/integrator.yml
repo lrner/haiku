@@ -1,0 +1,21 @@
+app: 'haiku-lrner-client'
+
+language: javascript
+
+test:
+  command: 'CI=true npm test'
+
+pre_build:
+  command: 'npm install'
+
+build:
+  method: 'command'
+  command: 'REACT_APP_STAGE=production npm run build'
+
+deploy:
+  provider: s3cmd
+
+s3:
+  endpoint: haiku.lrner.io
+  files: build/
+
