@@ -295,6 +295,6 @@ func main() {
 
 	http.HandleFunc("/book", handlers.bookHandler)
 
-	fmt.Println("Listening on Localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	fmt.Println("Listening on Localhost:3000")
+	log.Fatal(http.ListenAndServe(":3000", nil))
 }
