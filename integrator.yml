@@ -1,6 +1,6 @@
 app: 'haiku'
 
-language: javascript
+language: go
 
 docker:
   registry: docker.io
