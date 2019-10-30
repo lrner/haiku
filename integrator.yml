@@ -2,9 +2,6 @@ app: 'haiku'
 
 language: javascript
 
-depenencies:
-  - mongodb
-
 docker:
   registry: docker.io
   container_port: 3000
